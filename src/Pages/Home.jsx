@@ -1,20 +1,41 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { ZeldaApi } from "../Api/object.api";
-("../Api/object.api");
 import { ZeldaList } from "../components/ZeldaList";
+import { Navigation } from "../components/Navigation";
 
 export function Home() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    async function api() {
-      const res = await ZeldaApi();
-      setData(res.data);
-      console.log(data);
-    }
-    api();
-  }, []);
-
-  return <ZeldaList />;
+  return (
+    <div>
+      <div className="">
+        <h1 className="text-center danger my-4">
+          The Legend Of Zelda <br /> Breath Of The Wild
+        </h1>
+        <div className="navbar">
+          <Navigation />
+        </div>
+        <div className="container">
+          <video
+            src="https://www.zelda.com/breath-of-the-wild/assets/media/header/Night-1.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          ></video>
+          <video
+            src="https://www.zelda.com/breath-of-the-wild/assets/media/header/Main-Day.mp4"
+            type="video/mp4"
+            muted
+            playsInline
+          ></video>
+        </div>
+      </div>
+      <main className="container">
+        <div className="d-flex collapse">
+          <div className="col">
+            <ZeldaList />
+          </div>
+        </div>
+      </main>
+    </div>
+  );
 }
