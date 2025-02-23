@@ -9,7 +9,7 @@ export function Home() {
           The Legend Of Zelda <br /> Breath Of The Wild
         </h1>
         <div className="container">
-          <video
+          {/*  <video
             src="https://www.zelda.com/breath-of-the-wild/assets/media/header/Night-1.mp4"
             autoPlay
             loop
@@ -21,7 +21,7 @@ export function Home() {
             type="video/mp4"
             muted
             playsInline
-          ></video>
+          ></video> */}
         </div>
       </div>
       <main className="container">
