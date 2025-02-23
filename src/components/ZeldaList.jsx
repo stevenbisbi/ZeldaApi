@@ -8,7 +8,8 @@ export function ZeldaList() {
   useEffect(() => {
     async function fetchData() {
       const data = await ZeldaApi();
-      setCreatures(data.data);
+      const sortedData = data.data.sort((a, b) => a.id - b.id);
+      setCreatures(sortedData);
       console.log(data);
     }
     fetchData();

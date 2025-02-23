@@ -8,17 +8,20 @@ export function Creatures() {
   useEffect(() => {
     async function fetchData() {
       const data = await CreaturesApi();
-      setCreatures(data.data);
-      console.log(data);
+      const sortedData = data.data.sort((a, b) => a.id - b.id);
+      setCreatures(sortedData);
     }
     fetchData();
   }, []);
 
   return (
-    <div className="container d-flex flex-wrap gap-3">
-      {creatures.map((creature) => (
-        <ZeldaCard key={creature.id} object={creature} />
-      ))}
+    <div>
+      <h1 className="text-center">Creatures</h1>
+      <div className="container d-flex flex-wrap gap-3">
+        {creatures.map((creature) => (
+          <ZeldaCard key={creature.id} object={creature} />
+        ))}
+      </div>
     </div>
   );
 }

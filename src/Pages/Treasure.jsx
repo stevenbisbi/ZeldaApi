@@ -8,8 +8,8 @@ export function Treasure() {
   useEffect(() => {
     async function fetchData() {
       const data = await TreasureApi();
-      setCreatures(data.data);
-      console.log(data);
+      const sortedData = data.data.sort((a, b) => a.id - b.id);
+      setCreatures(sortedData);
     }
     fetchData();
   }, []);

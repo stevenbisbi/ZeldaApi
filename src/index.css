@@ -78,3 +78,11 @@ nav {
   background-image: url(../src/img/backgroundNav.jpeg);
   width: 100%;
 }
+
+.navbar-nav .nav-link {
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.navbar-nav .nav-link:hover {
+  transform: scale(1.5); /* Aumenta el tamaño al 110% */
+}

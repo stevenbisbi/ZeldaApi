@@ -8,8 +8,8 @@ export function Equipment() {
   useEffect(() => {
     async function fetchData() {
       const data = await EquipmentApi();
-      setCreatures(data.data);
-      console.log(data);
+      const sortedData = data.data.sort((a, b) => a.id - b.id);
+      setCreatures(sortedData);
     }
     fetchData();
   }, []);
