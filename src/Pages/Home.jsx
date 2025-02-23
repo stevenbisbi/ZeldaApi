@@ -1,7 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import { ZeldaList } from "../components/ZeldaList";
-import { Navigation } from "../components/Navigation";
 
 export function Home() {
   return (
@@ -10,9 +8,6 @@ export function Home() {
         <h1 className="text-center danger my-4">
           The Legend Of Zelda <br /> Breath Of The Wild
         </h1>
-        <div className="navbar">
-          <Navigation />
-        </div>
         <div className="container">
           <video
             src="https://www.zelda.com/breath-of-the-wild/assets/media/header/Night-1.mp4"
