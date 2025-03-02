@@ -15,10 +15,13 @@ export function Materials() {
   }, []);
 
   return (
-    <div className="container d-flex flex-wrap gap-3">
-      {creatures.map((creature) => (
-        <ZeldaCard key={creature.id} object={creature} />
-      ))}
+    <div>
+      <h1 className="text-center">Materials</h1>
+      <div className="container d-flex flex-wrap gap-3">
+        {creatures.map((creature) => (
+          <ZeldaCard key={creature.id} object={creature} />
+        ))}
+      </div>
     </div>
   );
 }

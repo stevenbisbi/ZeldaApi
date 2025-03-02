@@ -15,10 +15,13 @@ export function Treasure() {
   }, []);
 
   return (
-    <div className="container d-flex flex-wrap gap-3">
-      {creatures.map((creature) => (
-        <ZeldaCard key={creature.id} object={creature} />
-      ))}
+    <div>
+      <h1 className="text-center">Treasure</h1>
+      <div className="container d-flex flex-wrap gap-3">
+        {creatures.map((creature) => (
+          <ZeldaCard key={creature.id} object={creature} />
+        ))}
+      </div>
     </div>
   );
 }

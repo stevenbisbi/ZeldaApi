@@ -24,7 +24,7 @@ export function Home() {
           ></video> */}
         </div>
       </div>
-      <main className="">
+      <main>
         <ZeldaList />
       </main>
     </div>
