@@ -86,3 +86,11 @@ nav {
 .navbar-nav .nav-link:hover {
   transform: scale(1.5); /* Aumenta el tamaño al 110% */
 }
+
+.navbar-toggler-icon {
+  filter: invert(100%); /* Cambia el color a blanco */
+}
+
+.card-body {
+  margin-bottom: auto;
+}

@@ -10,7 +10,7 @@ import { Footer } from "./components/Footer";
 export function App() {
   return (
     <BrowserRouter>
-      <div className="m-5 px-4">
+      <div className="mt-5 px-4">
         <Navigation />
       </div>
 

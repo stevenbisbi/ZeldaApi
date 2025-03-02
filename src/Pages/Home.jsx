@@ -3,12 +3,12 @@ import { ZeldaList } from "../components/ZeldaList";
 
 export function Home() {
   return (
-    <div>
+    <div className="container-fluid">
       <div className="">
-        <h1 className="text-center danger my-4">
+        <h1 className="text-center text-danger my-4">
           The Legend Of Zelda <br /> Breath Of The Wild
         </h1>
-        <div className="container">
+        <div className="">
           {/*  <video
             src="https://www.zelda.com/breath-of-the-wild/assets/media/header/Night-1.mp4"
             autoPlay
@@ -24,12 +24,8 @@ export function Home() {
           ></video> */}
         </div>
       </div>
-      <main className="container">
-        <div className="d-flex collapse">
-          <div className="col">
-            <ZeldaList />
-          </div>
-        </div>
+      <main className="">
+        <ZeldaList />
       </main>
     </div>
   );

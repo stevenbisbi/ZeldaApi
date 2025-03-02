@@ -16,10 +16,12 @@ export function ZeldaList() {
   }, []);
 
   return (
-    <div className="container d-flex flex-wrap gap-3">
-      {creatures.map((creature) => (
-        <ZeldaCard key={creature.id} object={creature} />
-      ))}
+    <div className="container-fluid">
+      <div className="row d-flex gap-3 justify-content-center">
+        {creatures.map((creature) => (
+          <ZeldaCard key={creature.id} object={creature} />
+        ))}
+      </div>
     </div>
   );
 }
