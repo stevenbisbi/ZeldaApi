@@ -1,27 +1,12 @@
-import { ZeldaCard } from "../components/ZeldaCard";
-import React, { useState, useEffect } from "react";
+import { ZeldaList } from "../components/ZeldaList";
 import { MaterialsApi } from "../Api/materials.api";
 
 export function Materials() {
-  const [creatures, setCreatures] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await MaterialsApi();
-      const sortedData = data.data.sort((a, b) => a.id - b.id);
-      setCreatures(sortedData);
-    }
-    fetchData();
-  }, []);
-
+  const api = MaterialsApi();
   return (
     <div>
-      <h1 className="text-center">Materials</h1>
-      <div className="container d-flex flex-wrap gap-3">
-        {creatures.map((creature) => (
-          <ZeldaCard key={creature.id} object={creature} />
-        ))}
-      </div>
+      <h1 className="text-center">Equipment</h1>
+      <ZeldaList api={api} />
     </div>
   );
 }

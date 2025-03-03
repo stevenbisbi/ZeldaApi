@@ -56,9 +56,6 @@ export function Navigation() {
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-outline-light" type="submit">
-              Search
-            </button>
           </form>
         </div>
       </div>

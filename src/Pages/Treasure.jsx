@@ -1,27 +1,12 @@
-import { ZeldaCard } from "../components/ZeldaCard";
-import React, { useState, useEffect } from "react";
+import { ZeldaList } from "../components/ZeldaList";
 import { TreasureApi } from "../Api/treasure.api";
 
 export function Treasure() {
-  const [creatures, setCreatures] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await TreasureApi();
-      const sortedData = data.data.sort((a, b) => a.id - b.id);
-      setCreatures(sortedData);
-    }
-    fetchData();
-  }, []);
-
+  const api = TreasureApi();
   return (
     <div>
-      <h1 className="text-center">Treasure</h1>
-      <div className="container d-flex flex-wrap gap-3">
-        {creatures.map((creature) => (
-          <ZeldaCard key={creature.id} object={creature} />
-        ))}
-      </div>
+      <h1 className="text-center">Equipment</h1>
+      <ZeldaList api={api} />
     </div>
   );
 }

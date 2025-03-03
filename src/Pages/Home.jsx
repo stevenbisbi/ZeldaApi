@@ -1,11 +1,11 @@
-import React from "react";
 import { ZeldaList } from "../components/ZeldaList";
-
+import { ZeldaApi } from "../Api/object.api";
 export function Home() {
+  const api = ZeldaApi();
   return (
     <div className="container-fluid">
       <div className="">
-        <h1 className="text-center text-danger my-4">
+        <h1 className="text-center my-4">
           The Legend Of Zelda <br /> Breath Of The Wild
         </h1>
         <div className="">
@@ -25,7 +25,7 @@ export function Home() {
         </div>
       </div>
       <main>
-        <ZeldaList />
+        <ZeldaList api={api} />
       </main>
     </div>
   );
