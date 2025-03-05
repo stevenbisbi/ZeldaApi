@@ -98,3 +98,14 @@ nav {
 .modal-footer {
   background-image: url(../src/img/backgroundNav.jpeg);
 }
+.modal-body {
+  background-image: url(../src/img/backgroundZelda.webp);
+}
+
+.text-white {
+  color: whitesmoke;
+}
+
+strong {
+  color: whitesmoke;
+}
