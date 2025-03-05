@@ -1,10 +1,9 @@
 h1,
+h2,
 a {
   color: whitesmoke !important;
 }
-h2 {
-  color: #edc870 !important;
-}
+
 h1,
 h2,
 li {
@@ -93,4 +92,9 @@ nav {
 
 .card-body {
   margin-bottom: auto;
+}
+
+.modal-header,
+.modal-footer {
+  background-image: url(../src/img/backgroundNav.jpeg);
 }

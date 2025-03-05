@@ -5,7 +5,7 @@ export function Home() {
   return (
     <div className="container-fluid">
       <div className="">
-        <h1 className="text-center my-4">
+        <h1 className="text-center my-4 display-2">
           The Legend Of Zelda <br /> Breath Of The Wild
         </h1>
         <div className="">

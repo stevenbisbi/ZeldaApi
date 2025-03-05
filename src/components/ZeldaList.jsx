@@ -1,9 +1,11 @@
 import { ZeldaCard } from "../components/ZeldaCard";
+import { ModalZeldaCard } from "../components/ModalZeldaCard";
 import React, { useState, useEffect } from "react";
 
 export function ZeldaList({ api }) {
   const [creatures, setCreatures] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedObject, setSelectedObject] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -26,10 +28,16 @@ export function ZeldaList({ api }) {
           </div>
         ) : (
           creatures.map((object) => (
-            <ZeldaCard key={object.id} object={object} />
+            <ZeldaCard
+              key={object.id}
+              object={object}
+              setSelectedObject={setSelectedObject}
+            />
           ))
         )}
       </div>
+      {/* Renderiza el modal fuera del mapeo para evitar múltiples instancias */}
+      <ModalZeldaCard selectedObject={selectedObject} />
     </div>
   );
 }

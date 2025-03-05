@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export function Navigation() {
@@ -16,8 +16,8 @@ export function Navigation() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <div className="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li className="nav-item mx-4 pt-3">
               <Link className="nav-link active" aria-current="page" to="/">
                 <h3>Home</h3>
@@ -43,13 +43,13 @@ export function Navigation() {
                 <h3>Monsters</h3>
               </Link>
             </li>
-            <li className="nav-item mx-4 pt-3">
+            <li className="nav-item mx-4 pt-3 ">
               <Link className="nav-link" to="/treasure">
                 <h3>Treasure</h3>
               </Link>
             </li>
           </ul>
-          <form className="d-flex" role="search">
+          <form className="d-flex px-2" role="search">
             <input
               className="form-control me-2"
               type="search"
