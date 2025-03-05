@@ -58,12 +58,30 @@ export function ModalZeldaCard({ selectedObject }) {
                         </p>
                       </div>
                       <div className="col-6">
-                        <p>
-                          <strong>Drops:</strong> <br />
-                          {selectedObject?.drop?.length > 0
-                            ? selectedObject.drop.join(", ")
-                            : "No drops available"}
-                        </p>
+                        {selectedObject?.drops ? (
+                          <p>
+                            <strong>Drops:</strong> <br />
+                            {selectedObject?.drops?.length > 0
+                              ? selectedObject.drops.join(", ")
+                              : "No drops available"}
+                          </p>
+                        ) : selectedObject?.properties ? (
+                          <>
+                            <strong>Properties:</strong> <br />{" "}
+                            <p>Attack : {selectedObject.properties.attack} </p>
+                            <p>Defense : {selectedObject.properties.defense}</p>
+                          </>
+                        ) : selectedObject?.hearts_recovered ||
+                          selectedObject.cooking_effect ? (
+                          <>
+                            <strong>Hearts recovered:</strong> <br />
+                            <p>
+                              {selectedObject.hearts_recovered} hearts recovered
+                            </p>
+                            <strong>Cooking effect:</strong> <br />
+                            <p>{selectedObject.cooking_effect}</p>
+                          </>
+                        ) : null}
                       </div>
                     </div>
                   </div>
