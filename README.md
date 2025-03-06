@@ -21,31 +21,3 @@ Este proyecto es una aplicación web que muestra información sobre los objetos 
    git clone https://github.com/tu-usuario/zelda-botw-api.git
    cd zelda-botw-api
    ```
-
-├── public
-│ ├── index.html
-│ └── ...
-├── src
-│ ├── Api
-│ │ ├── creatures.api.js
-│ │ ├── equipment.api.js
-│ │ ├── materials.api.js
-│ │ ├── monsters.api.js
-│ │ └── treasure.api.js
-│ ├── components
-│ │ ├── ModalZeldaCard.jsx
-│ │ ├── Navigation.jsx
-│ │ ├── ZeldaCard.jsx
-│ │ └── ZeldaList.jsx
-│ ├── Pages
-│ │ ├── Creatures.jsx
-│ │ ├── Equipment.jsx
-│ │ ├── Home.jsx
-│ │ ├── Materials.jsx
-│ │ ├── Monsters.jsx
-│ │ └── Treasure.jsx
-│ ├── App.js
-│ ├── index.js
-│ └── ...
-├── package.json
-└── README.md
