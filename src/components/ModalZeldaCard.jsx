@@ -8,7 +8,6 @@ export function ModalZeldaCard({ selectedObject }) {
       id="modalZeldaCard"
       tabIndex="-1"
       aria-labelledby="modalZeldaCardLabel"
-      aria-hidden="true"
     >
       <div className="modal-dialog">
         <div className="modal-content">
@@ -51,7 +50,7 @@ export function ModalZeldaCard({ selectedObject }) {
                   <div className="container">
                     <div className="row">
                       <div className="col-6">
-                        <p className="text-center">
+                        <p className="d-flex flex-column text-center">
                           <strong>Common locations:</strong> <br />
                           {selectedObject?.common_locations?.length > 0
                             ? selectedObject.common_locations.map(
@@ -66,7 +65,7 @@ export function ModalZeldaCard({ selectedObject }) {
                       </div>
                       <div className="col-6">
                         {selectedObject?.drops ? (
-                          <p className="text-center">
+                          <p className="d-flex flex-column text-center">
                             <strong>Drops:</strong> <br />
                             {selectedObject?.drops?.length > 0
                               ? selectedObject.drops.map((drop, index) => (
@@ -77,14 +76,14 @@ export function ModalZeldaCard({ selectedObject }) {
                               : "No drops available"}
                           </p>
                         ) : selectedObject?.properties ? (
-                          <>
+                          <p className="d-flex flex-column text-center">
                             <strong>Properties:</strong> <br />{" "}
                             <p>Attack : {selectedObject.properties.attack} </p>
                             <p>Defense : {selectedObject.properties.defense}</p>
-                          </>
+                          </p>
                         ) : selectedObject?.hearts_recovered ||
                           selectedObject.cooking_effect ? (
-                          <>
+                          <p className="d-flex flex-column text-center">
                             <strong>Hearts recovered:</strong> <br />
                             <p>
                               {selectedObject.hearts_recovered} hearts recovered
@@ -95,7 +94,7 @@ export function ModalZeldaCard({ selectedObject }) {
                             ) : (
                               <p>No cooking effect available</p>
                             )}
-                          </>
+                          </p>
                         ) : null}
                       </div>
                     </div>
