@@ -13,10 +13,7 @@ export function ModalZeldaCard({ selectedObject }) {
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
-            <h1
-              className="modal-title fs-5 text-center"
-              id="modalZeldaCardLabel"
-            >
+            <h1 className="modal-title fs-5" id="modalZeldaCardLabel">
               {selectedObject?.name}
             </h1>
             <button
@@ -35,7 +32,10 @@ export function ModalZeldaCard({ selectedObject }) {
                       src={selectedObject.image}
                       alt={selectedObject.name}
                       className="img-fluid mb-3 text-center"
-                    />
+                    />{" "}
+                    <p>
+                      <hr />
+                    </p>
                   </div>
                   <p className="text-white">
                     {"#"}
@@ -45,24 +45,35 @@ export function ModalZeldaCard({ selectedObject }) {
                     <strong>Category:</strong> {selectedObject.category}
                   </p>
                   <p>
-                    <strong>Description:</strong> {selectedObject.description}
+                    <strong>Description:</strong> {selectedObject.description}{" "}
+                    <hr />
                   </p>
                   <div className="container">
                     <div className="row">
                       <div className="col-6">
-                        <p>
+                        <p className="text-center">
                           <strong>Common locations:</strong> <br />
                           {selectedObject?.common_locations?.length > 0
-                            ? selectedObject.common_locations.join(", ")
+                            ? selectedObject.common_locations.map(
+                                (common_location, index) => (
+                                  <span key={index}>
+                                    {common_location} <br />
+                                  </span>
+                                )
+                              )
                             : "No common locations"}
                         </p>
                       </div>
                       <div className="col-6">
                         {selectedObject?.drops ? (
-                          <p>
+                          <p className="text-center">
                             <strong>Drops:</strong> <br />
                             {selectedObject?.drops?.length > 0
-                              ? selectedObject.drops.join(", ")
+                              ? selectedObject.drops.map((drop, index) => (
+                                  <span key={index}>
+                                    {drop} <br />
+                                  </span>
+                                ))
                               : "No drops available"}
                           </p>
                         ) : selectedObject?.properties ? (
@@ -79,7 +90,11 @@ export function ModalZeldaCard({ selectedObject }) {
                               {selectedObject.hearts_recovered} hearts recovered
                             </p>
                             <strong>Cooking effect:</strong> <br />
-                            <p>{selectedObject.cooking_effect}</p>
+                            {selectedObject.cooking_effect.length > 0 ? (
+                              <p>{selectedObject.cooking_effect}</p>
+                            ) : (
+                              <p>No cooking effect available</p>
+                            )}
                           </>
                         ) : null}
                       </div>
