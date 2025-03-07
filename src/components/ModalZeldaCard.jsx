@@ -9,7 +9,7 @@ export function ModalZeldaCard({ selectedObject }) {
       tabIndex="-1"
       aria-labelledby="modalZeldaCardLabel"
     >
-      <div className="modal-dialog">
+      <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">
             <h1 className="modal-title fs-5" id="modalZeldaCardLabel">
