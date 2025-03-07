@@ -1,3 +1,11 @@
+:root {
+  --primary: #edc870;
+  --secondary: #f8f9fa;
+  --dark: #343a40;
+  --light: #f8f9fa;
+  --danger: #dc3545;
+}
+
 h1,
 h2,
 a {
@@ -73,7 +81,7 @@ a :hover {
   color: #edc870;
 }
 
-nav {
+.navbar {
   background-image: url(../src/img/backgroundNav.jpeg);
   width: 100%;
 }
@@ -108,4 +116,12 @@ nav {
 
 strong {
   color: whitesmoke;
+}
+
+.color-primary {
+  color: var(--primary) !important;
+}
+
+.color-dark {
+  color: var(--dark) !important;
 }

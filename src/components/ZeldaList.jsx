@@ -1,11 +1,14 @@
+import React, { useState, useEffect } from "react";
 import { ZeldaCard } from "../components/ZeldaCard";
 import { ModalZeldaCard } from "../components/ModalZeldaCard";
-import React, { useState, useEffect } from "react";
+import { Pagination } from "../components/Pagination";
 
 export function ZeldaList({ api }) {
   const [creatures, setCreatures] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedObject, setSelectedObject] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 52;
 
   useEffect(() => {
     async function fetchData() {
@@ -15,19 +18,27 @@ export function ZeldaList({ api }) {
       setLoading(false);
     }
     fetchData();
-  }, []);
+  }, [api]);
+
+  // Calcular los objetos a mostrar en la página actual
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = creatures.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Cambiar de página
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="container-fluid">
       <div className="row d-flex gap-3 justify-content-center">
         {loading ? (
           <div className="d-flex justify-content-center w-100 my-5">
-            <div className="spinner-border text-warning " role="status">
+            <div className="spinner-border text-warning" role="status">
               <span className="visually-hidden">Cargando...</span>
             </div>
           </div>
         ) : (
-          creatures.map((object) => (
+          currentItems.map((object) => (
             <ZeldaCard
               key={object.id}
               object={object}
@@ -38,6 +49,12 @@ export function ZeldaList({ api }) {
       </div>
       {/* Renderiza el modal fuera del mapeo para evitar múltiples instancias */}
       <ModalZeldaCard selectedObject={selectedObject} />
+      <Pagination
+        itemsPerPage={itemsPerPage}
+        totalItems={creatures.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
     </div>
   );
 }
