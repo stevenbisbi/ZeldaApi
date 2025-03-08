@@ -30,6 +30,12 @@ export function ZeldaList({ api }) {
 
   return (
     <div className="container-fluid">
+      <Pagination
+        itemsPerPage={itemsPerPage}
+        totalItems={creatures.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
       <div className="row d-flex gap-3 justify-content-center">
         {loading ? (
           <div className="d-flex justify-content-center w-100 my-5">
@@ -49,12 +55,6 @@ export function ZeldaList({ api }) {
       </div>
       {/* Renderiza el modal fuera del mapeo para evitar múltiples instancias */}
       <ModalZeldaCard selectedObject={selectedObject} />
-      <Pagination
-        itemsPerPage={itemsPerPage}
-        totalItems={creatures.length}
-        paginate={paginate}
-        currentPage={currentPage}
-      />
     </div>
   );
 }

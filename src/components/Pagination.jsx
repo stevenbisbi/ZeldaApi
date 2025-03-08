@@ -13,7 +13,7 @@ export function Pagination({
   }
 
   return (
-    <nav className="mt-5">
+    <nav className="mb-4">
       <ul className="pagination justify-content-center">
         {pageNumbers.map((number) => (
           <li
