@@ -3,7 +3,7 @@ import { ZeldaApi } from "../Api/object.api";
 export function Home() {
   const api = ZeldaApi();
   return (
-    <div className="container-fluid">
+    <div id="titleHome" className="container-fluid">
       <div className="">
         <h1 className="text-center my-4 display-2">
           The Legend Of Zelda <br /> Breath Of The Wild

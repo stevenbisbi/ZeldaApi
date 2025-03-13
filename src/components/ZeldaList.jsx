@@ -8,7 +8,7 @@ export function ZeldaList({ api }) {
   const [loading, setLoading] = useState(true);
   const [selectedObject, setSelectedObject] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 52;
+  const itemsPerPage = 44;
 
   useEffect(() => {
     async function fetchData() {
@@ -30,12 +30,17 @@ export function ZeldaList({ api }) {
 
   return (
     <div className="container-fluid">
-      <Pagination
-        itemsPerPage={itemsPerPage}
-        totalItems={creatures.length}
-        paginate={paginate}
-        currentPage={currentPage}
-      />
+      {currentPage != 1 ? (
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          totalItems={creatures.length}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
+      ) : (
+        <div> hola</div>
+      )}
+
       <div className="row d-flex gap-3 justify-content-center">
         {loading ? (
           <div className="d-flex justify-content-center w-100 my-5">
@@ -53,6 +58,12 @@ export function ZeldaList({ api }) {
           ))
         )}
       </div>
+      <Pagination
+        itemsPerPage={itemsPerPage}
+        totalItems={creatures.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
       {/* Renderiza el modal fuera del mapeo para evitar múltiples instancias */}
       <ModalZeldaCard selectedObject={selectedObject} />
     </div>

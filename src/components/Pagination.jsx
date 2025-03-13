@@ -13,7 +13,7 @@ export function Pagination({
   }
 
   return (
-    <nav className="mb-4">
+    <nav className="my-4">
       <ul className="pagination justify-content-center">
         {pageNumbers.map((number) => (
           <li
@@ -22,7 +22,7 @@ export function Pagination({
           >
             <a
               onClick={() => paginate(number)}
-              href="#!"
+              href="#navbarSupportedContent"
               className="page-link color-dark"
             >
               {number}
