@@ -125,3 +125,11 @@ strong {
 .color-dark {
   color: var(--dark) !important;
 }
+
+.img-hover:hover {
+  transform: scale(1.3); /* Aumenta el tamaño al 110% */
+}
+
+.body-hover:hover {
+  transform: scale(1.6); /* Aumenta el tamaño al 110% */
+}

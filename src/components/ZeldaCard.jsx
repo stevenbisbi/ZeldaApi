@@ -6,8 +6,12 @@ export function ZeldaCard({ object, setSelectedObject }) {
       data-bs-toggle="modal"
       data-bs-target="#modalZeldaCard"
     >
-      <img src={object.image} alt="imagen" className="rounded-circle" />
-      <div className="card-body">
+      <img
+        src={object.image}
+        alt="imagen"
+        className="rounded-circle img-hover"
+      />
+      <div className="card-body body-hover">
         <p>{object.id}</p>
         <h2>{object.name}</h2>
       </div>

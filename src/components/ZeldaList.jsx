@@ -38,7 +38,7 @@ export function ZeldaList({ api }) {
           currentPage={currentPage}
         />
       ) : (
-        <div> hola</div>
+        <div>hay que cambiar esto </div>
       )}
 
       <div className="row d-flex gap-3 justify-content-center">
