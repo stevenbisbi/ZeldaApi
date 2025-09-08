@@ -11,7 +11,7 @@ export function ZeldaCard({ object, setSelectedObject }) {
         alt="imagen"
         className="rounded-circle img-hover"
       />
-      <div className="card-body body-hover">
+      <div className="card-body">
         <p>{object.id}</p>
         <h2>{object.name}</h2>
       </div>
