@@ -31,6 +31,7 @@ export function ModalZeldaCard({ selectedObject }) {
                       src={selectedObject.image}
                       alt={selectedObject.name}
                       className="img-fluid mb-3 text-center"
+                      width={380}
                     />{" "}
                     <p>
                       <hr />
