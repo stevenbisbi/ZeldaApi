@@ -18,6 +18,8 @@ Este proyecto es una aplicación web que muestra información sobre los objetos 
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/zelda-botw-api.git
-   cd zelda-botw-api
+   git clone https://github.com/stevenbisbi/ZeldaApi
+   cd ZeldaApi
+   npm i
+   npm run dev
    ```
