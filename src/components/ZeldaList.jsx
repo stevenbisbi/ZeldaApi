@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { ZeldaCard } from "../components/ZeldaCard";
 import { ModalZeldaCard } from "../components/ModalZeldaCard";
 import { Pagination } from "../components/Pagination";
+import { useSearch } from "../context/SearchContext";
 
 export function ZeldaList({ api }) {
+  const { search } = useSearch();
   const [creatures, setCreatures] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedObject, setSelectedObject] = useState(null);
@@ -20,10 +22,15 @@ export function ZeldaList({ api }) {
     fetchData();
   }, [api]);
 
+  // Filtrar
+  const itemFiltered = creatures.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   // Calcular los objetos a mostrar en la página actual
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = creatures.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = itemFiltered.slice(indexOfFirstItem, indexOfLastItem);
 
   // Cambiar de página
   const paginate = (pageNumber) => setCurrentPage(pageNumber);

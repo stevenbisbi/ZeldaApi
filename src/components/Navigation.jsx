@@ -1,7 +1,8 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { SearchBar } from "./SearchBar";
+import { useSearch } from "../context/SearchContext";
 export function Navigation() {
+  const { setSearch } = useSearch();
   return (
     <nav className="navbar navbar-expand-lg w-100">
       <div className="container-fluid">
@@ -49,14 +50,7 @@ export function Navigation() {
               </Link>
             </li>
           </ul>
-          <form className="d-flex px-2" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
+          <SearchBar setSearch={setSearch} />
         </div>
       </div>
     </nav>
